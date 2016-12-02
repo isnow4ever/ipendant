@@ -27,7 +27,7 @@ include_directories(
         ${Boost_INCLUDE_DIR}
         ${CMAKE_CURRENT_BINARY_DIR}
         # "/home/isnow4ever/Qt4.8.5/mkspecs/linux-g++-64/" #x86-64
-	"/usr/local/qt4.8.5/mkspecs/linux-arm-gnueabi-g++/" #arm
+	# "/usr/local/qt4.8.5/mkspecs/linux-arm-gnueabi-g++/" #arm
 #	"/usr/local/regex/include/"
 	)
 
