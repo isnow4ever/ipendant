@@ -1,5 +1,5 @@
 #iPentant version 2.3
-#2015-03-10 update
+#2016-12-02 update
 #update log
 
 1. rewrite command "WAIT" related functions. now well work with inputs and outputs.
