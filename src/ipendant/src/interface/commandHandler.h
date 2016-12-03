@@ -53,6 +53,8 @@ public:
     void restartDevice();
     void setIO(int);
     void resetIO(int);
+    void comLED(bool);
+    void movingLED(bool);
 };
 
 #endif //COMMANDHANDLER_H

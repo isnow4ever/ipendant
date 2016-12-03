@@ -114,3 +114,19 @@ void ExtraCommand::restartDevice()
     ROS_INFO("devices are restarting......");
     callback("restart J");
 }
+
+void ExtraCommand::comLED(bool com)
+{
+    if(com == 1)
+        callback("comON");
+    else
+        callback("comOFF");
+}
+
+void ExtraCommand::movingLED(bool moving)
+{
+    if(moving == 1)
+        callback("movingON");
+    else
+        callback("movingOFF");
+}

@@ -27,6 +27,8 @@
 
 #define new_cmd_delay 400000
 
+bool wait_command_state = 0;
+
 Playback::Playback() : stop_signal(0)
 {
     count.childProjDepth = 0;

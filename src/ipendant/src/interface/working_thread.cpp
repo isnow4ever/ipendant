@@ -259,10 +259,10 @@ void ROS_Communication::run()
         tf::StampedTransform transform;
         try
         {
-            listener.waitForTransform("/root", "/tool",
-                                     ros::Time(0), ros::Duration(10.0));
+            //            listener.waitForTransform("/root", "/tool",
+            //                                      ros::Time (0), ros::Duration(10.0));
             listener.lookupTransform("/root", "/tool",
-                                     ros::Time(0), transform);
+             ros::Time(0), transform);
         }
         catch (tf::TransformException ex)
         {

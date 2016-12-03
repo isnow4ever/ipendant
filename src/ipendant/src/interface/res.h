@@ -327,7 +327,7 @@ struct UserFrame
     vector<double> thirdPoint;
 
 };
-
+extern bool wait_command_state;
 //extern Parameter *params;
 //extern State *states;
 //extern Controller_State *controller_states;
