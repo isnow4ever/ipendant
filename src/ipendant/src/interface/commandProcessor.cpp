@@ -79,6 +79,11 @@ QString const MOVJ_LSPB_Processor::Process ( QString const & command, Parameter 
 
 int const MOVJ_LSPB_Processor::CanContinue(int const m_id, QString const & command, Controller_State const *controller_states, State const *states)
 {
+    Command cc;
+    cc = Load(command);
+    if(cc.method != "MOVJ_LSPB")
+        return 0;
+
     if(m_id == atoi(controller_states->current_id.c_str()))
     {
         if((controller_states->_robot_state == "stable")&&(controller_states->action_result == "succeed"))
@@ -150,6 +155,11 @@ QString const MOVL_RPY_LSPB_Processor::Process ( QString const & command, Parame
 
 int const MOVL_RPY_LSPB_Processor::CanContinue(int const m_id, QString const & command, Controller_State const *controller_states, State const *states)
 {
+    Command cc;
+    cc = Load(command);
+    if(cc.method != "MOVL_RPY_LSPB")
+        return 0;
+        
     if(m_id == atoi(controller_states->current_id.c_str()))
     {
         if((controller_states->_robot_state == "stable")&&(controller_states->action_result == "succeed"))
@@ -220,6 +230,11 @@ QString const MOVJ_SPLINE_LSPB_Processor::Process ( QString const & command, Par
 
 int const MOVJ_SPLINE_LSPB_Processor::CanContinue(int const m_id, QString const & command, Controller_State const *controller_states, State const *states)
 {
+    Command cc;
+    cc = Load(command);
+    if(cc.method != "MOVJ_SPLINE_LSPB")
+        return 0;
+        
     if(m_id == atoi(controller_states->current_id.c_str()))
     {
         if((controller_states->_robot_state == "stable")&&(controller_states->action_result == "succeed"))
