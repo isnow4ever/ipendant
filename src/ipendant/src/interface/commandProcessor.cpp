@@ -290,18 +290,12 @@ QString const SET_Processor::Process ( QString const & command, Parameter const 
 
 int const SET_Processor::CanContinue(int const m_id, QString const & command, Controller_State const *controller_states, State const *states)
 {
-    if(m_id == atoi(controller_states->current_id.c_str()))
-    {
-        QStringList commandline = command.split(" ");
-        if(commandline.at(0) == "SET")
-        {
-            // if(states->iostate[commandline.at(1).toInt()] == 1)
-            // {
-                return 1;
-            // }
-        }
-    }
-    return 0;
+    Command cc;
+    cc = Load(command);
+    if(cc.method != "SET")
+        return 0;
+    else
+        return 1;
 }
 
 //RESET_Processor
@@ -343,18 +337,12 @@ QString const RESET_Processor::Process ( QString const & command, Parameter cons
 
 int const RESET_Processor::CanContinue(int const m_id, QString const & command, Controller_State const *controller_states, State const *states)
 {
-    if(m_id == atoi(controller_states->current_id.c_str()))
-    {
-        QStringList commandline = command.split(" ");
-        if(commandline.at(0) == "RESET")
-        {
-            // if(states->iostate[commandline.at(1).toInt()] == 1)
-            // {
-                return 1;
-            // }
-        }
-    }
-    return 0;
+    Command cc;
+    cc = Load(command);
+    if(cc.method != "RESET")
+        return 0;
+    else
+        return 1;
 }
 
 //WAIT_Processor
